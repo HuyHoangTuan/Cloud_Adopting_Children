@@ -8,6 +8,7 @@ import PublicRoute from "./PublicRoute";
 import { PATH } from "../../constances/GUIConstance";
 import CustomAppBar from "../../modules/app_bar/CustomAppBar";
 import { ThemeProvider, createTheme } from "@mui/material";
+import GUIHomeDemo from "../../pages/demo/GUIHomeDemo";
 
 
 const theme = createTheme({
@@ -57,10 +58,10 @@ export const CustomRouter = createBrowserRouter(
                     <PrivateRoute path = {PATH.HOME}>
                         <ThemeProvider theme={theme}>
                             <React.Fragment>
-                                <CustomAppBar/>
+                                
                                 <React.Fragment>
                                     <Routes>
-                                        <Route path = {PATH.HOME} element = {<GUIHome/>}/>
+                                        <Route path = {PATH.HOME} element = {<GUIHomeDemo/>}/>
                                     </Routes>
                                 </React.Fragment>
                             </React.Fragment>

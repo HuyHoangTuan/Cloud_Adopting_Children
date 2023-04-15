@@ -3,11 +3,15 @@ import axios from "axios";
 import React, { useRef } from "react"
 import { ToastContainer, toast } from "react-toastify";
 import { Logging } from "../../../utils/Logging";
+import { UserMgr } from "../../../main/manager/UserMgr";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const GUISignIn = () => {
 
     let emailRef = useRef();
     let passwordRef = useRef();
+
+    let navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -17,11 +21,15 @@ const GUISignIn = () => {
         }
 
         Logging.info('Send Login: ',JSON.stringify(data));
-        
+
         axios.post('/login',data).then((res) => {
             alert('Logged In!');
+            UserMgr.updateUserModel(res, true);
+            navigate('/');
         }).catch((err) => {
             alert('Error!');
+            // UserMgr.updateUserModel({test: 'test1', test2: 'test3'}, true);
+            // navigate('/');
         })
     }
     return (

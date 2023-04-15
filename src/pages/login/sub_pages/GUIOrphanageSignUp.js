@@ -139,8 +139,8 @@ const GUIOrphanageSignUp = () => {
                         </form>
                         <Typography variant="body2" align="center" sx={{ marginTop: '16px' }}>
                             Already have an account?{' '}
-                            <Link href="/authentication" color="primary">
-                                Register here
+                            <Link href="/authentication/login" color="primary">
+                                Sign in
                             </Link>
                         </Typography>
                     </Paper>

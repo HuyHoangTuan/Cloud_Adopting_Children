@@ -9,8 +9,6 @@ const GUIIntro = () => {
             elevation = {0}
             square
             sx ={{
-                top: '50%',
-                transform: 'translate(0%, 30%)',
                 paddingLeft: '16px',
                 paddingRight: '16px'
             }}
@@ -62,7 +60,7 @@ const GUIIntro = () => {
             <Typography
                 variant="body2"
                 sx={{
-                    marginTop: '390px',
+                    marginTop: '24px',
                     textAlign: 'center'
                 }}
             >

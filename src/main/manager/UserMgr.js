@@ -7,24 +7,32 @@ export const UserMgr = function(){
     const updateUserModel = (data, isLogin = true) => {
         if(isLogin === true)
         {
-            userModel.setData(data);
+            userModel.setJsonData(data);
+            sessionStorage.setItem('login_state', JSON.stringify(data));
+            // userModel.setData(data);
         }
         else
         {
-            userModel.resetData();
+            userModel.setJsonData("");
+            sessionStorage.setItem('login_state', "");
+            // userModel.resetData();
         }
     }
 
     const isLogin = () =>{
         let loginState = sessionStorage.getItem('login_state');
-
-        if(loginState != null && loginState != LOGIN_STATE.SUCCESS)
+        // console.log(JSON.stringify(userModel.getJsonData()));
+        if(loginState != null)
         {
-            if(loginState == LOGIN_STATE.SUCCESS) return true;
+            if(loginState.length > 0)
+            {
+                UserMgr.updateUserModel(JSON.parse(loginState));
+                return true;
+            }
             else return false;
         }
 
-        return userModel.getId().length > 0;
+        return JSON.stringify(userModel.getJsonData()).length > 2;
     }
 
     const getUserModel = () => {

@@ -5,6 +5,15 @@ export const UserModel = function(){
     let name;
     let doB;
     let address;
+    let jsonData;
+
+    const setJsonData = (j) => {
+        jsonData =j;
+    }
+
+    const getJsonData = () =>{
+        return jsonData;
+    }
 
     const setId = (i) => {
         id = i;
@@ -70,6 +79,7 @@ export const UserModel = function(){
         setName("");
         setDoB("");
         setAddress("");
+        setJsonData("");
     }
 
     resetData();
@@ -88,6 +98,8 @@ export const UserModel = function(){
         setAddress,
         getAddress,
         setData,
-        resetData
+        resetData,
+        setJsonData,
+        getJsonData
     }
 }();
