@@ -24,7 +24,7 @@ const GUISignIn = () => {
 
         axios.post('/login',data).then((res) => {
             alert('Logged In!');
-            UserMgr.updateUserModel(res, true);
+            UserMgr.updateUserModel(res.data, true);
             navigate('/');
         }).catch((err) => {
             alert('Error!');

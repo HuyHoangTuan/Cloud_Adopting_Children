@@ -21,7 +21,7 @@ const GUIParentSignUp = () =>{
             gender: gender,
             phone_number: phoneNumberRef.current.value,
             email: emailRef.current.value,
-            passwordRef: passwordRef.current.value,
+            password: passwordRef.current.value,
 
         }
         Logging.info('Send Parent Sign Up:', JSON.stringify(data));
@@ -133,7 +133,7 @@ const GUIParentSignUp = () =>{
                                 <Grid item xs={12}>
                                     <Button
                                         fullWidth
-                                        color="primary"
+                                        color="button"
                                         variant="contained"
                                         type="submit"
                                         onClick={handleClick}

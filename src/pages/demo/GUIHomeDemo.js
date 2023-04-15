@@ -35,7 +35,9 @@ const GUIHomeDemo = () =>{
                         width: '50vw',
                         height: '100vh',
                         textAlign: 'center',
-                        margin: '0 auto'
+                        margin: '0 auto',
+                        justifyContent:'center',
+                        alignItems:'center'
                     }
                 }
             >
