@@ -2,6 +2,7 @@ import { Button, CircularProgress, FormControl, Grid, InputLabel, Link, Menu, Me
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Logging } from "../../../utils/Logging";
 
 const GUIParentSignUp = () =>{
     let nameRef = useRef();
@@ -23,7 +24,7 @@ const GUIParentSignUp = () =>{
             passwordRef: passwordRef.current.value,
 
         }
-        // console.log(data);
+        Logging.info('Send Parent Sign Up:', JSON.stringify(data));
         setLoading(true);
         axios.post('/register/parent', data).then((response) => {
             setLoading(false);

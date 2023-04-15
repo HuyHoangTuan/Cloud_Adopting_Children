@@ -2,6 +2,7 @@ import { Button, Link, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useRef } from "react"
 import { ToastContainer, toast } from "react-toastify";
+import { Logging } from "../../../utils/Logging";
 
 const GUISignIn = () => {
 
@@ -14,6 +15,9 @@ const GUISignIn = () => {
             email:  emailRef.current.value,
             password: passwordRef.current.value
         }
+
+        Logging.info('Send Login: ',JSON.stringify(data));
+        
         axios.post('/login',data).then((res) => {
             alert('Logged In!');
         }).catch((err) => {

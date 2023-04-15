@@ -2,6 +2,7 @@ import { Button, CircularProgress, Grid, Link, Paper, TextField, Typography } fr
 import axios from "axios";
 import React, {useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Logging } from "../../../utils/Logging";
 
 const GUIOrphanageSignUp = () => {
     let [pageNumber, setPageNumber] = useState(1);
@@ -51,6 +52,7 @@ const GUIOrphanageSignUp = () => {
         let data = Object.assign({}, sendData);
         setLoading(true);
 
+        Logging.info('Send Orphanage Sign Up: ',JSON.stringify(data));
         axios.post('/register/orphanage', data).then((response) => {
             setLoading(false);
         }).catch((error) => {
