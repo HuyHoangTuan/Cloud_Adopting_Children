@@ -53,7 +53,7 @@ const GUIOrphanageSignUp = () => {
         setLoading(true);
 
         Logging.info('Send Orphanage Sign Up: ',JSON.stringify(data));
-        axios.post('/register/orphanage', data).then((response) => {
+        axios.post('https://ypkmwgi4m3le4hyvelpmdanasu0kgeck.lambda-url.us-east-1.on.aws', data).then((response) => {
             setLoading(false);
         }).catch((error) => {
             setLoading(false);

@@ -26,7 +26,7 @@ const GUIParentSignUp = () =>{
         }
         Logging.info('Send Parent Sign Up:', JSON.stringify(data));
         setLoading(true);
-        axios.post('/register/parent', data).then((response) => {
+        axios.post('https://kjfets4supnvvnyuppjxyvvld40ggfag.lambda-url.us-east-1.on.aws', data).then((response) => {
             setLoading(false);
             navigate('/authentication/login');
         }).catch((error) => {

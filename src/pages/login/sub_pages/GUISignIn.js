@@ -22,7 +22,7 @@ const GUISignIn = () => {
 
         Logging.info('Send Login: ',JSON.stringify(data));
 
-        axios.post('/login',data).then((res) => {
+        axios.post('https://y7zxrnck26rqonku3nwqdoirfi0biyao.lambda-url.us-east-1.on.aws',data).then((res) => {
             alert('Logged In!');
             UserMgr.updateUserModel(res.data, true);
             navigate('/');

@@ -48,7 +48,7 @@ const GUILogin = () => {
                 }}
             >
                 {
-                    params['*'] == '' ? <GUIIntro/> : params['*'] == 'login' ? <GUISignIn/> : (params['*'] == 'register_orphanage') ? <GUIOrphanageSignUp/> : (params['*'] == 'register_parents') ? <GUIParentSignUp/> : <GUIIntro/>
+                    params['*'].replaceAll('/', '') == '' ? <GUIIntro/> : params['*'].replaceAll('/', '') == 'login' ? <GUISignIn/> : (params['*'].replaceAll('/', '') == 'register_orphanage') ? <GUIOrphanageSignUp/> : (params['*'].replaceAll('/', '') == 'register_parents') ? <GUIParentSignUp/> : <GUIIntro/>
                 }
             </Grid>             
         </Grid>
